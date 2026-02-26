@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt 
 
       - name: Create .env 
-        run: \
+        run: |
           echo "DB_HOST=127.0.0.1" >> .env
           echo "DB_PORT=3306" >> .env
           echo "DB_USER=labo05" >> .env
