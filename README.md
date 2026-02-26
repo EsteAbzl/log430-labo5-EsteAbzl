@@ -8,7 +8,7 @@
 - Apprendre à configurer et utiliser KrakenD, un API Gateway
 - Découvrir les configurations de `timeout` (limitation du temps de réponse) et `rate limiting` (limitation du nombre de requêtes) dans KrakenD
 
-## ⚙️ Setup
+## ⚙️ Setup 
 
 Dans ce labo, nous allons ajouter des fonctionnalités de paiement à notre application Store Manager. Ainsi comme nous avons les répertoires `orders` et `stocks` dans notre projet, nous pourrions simplement ajouter un répertoire `payments` et commencer à écrire nos fonctionnalités de paiement. Cependant, il vaut mieux développer une application complètement isolée dans un dépôt séparé - un microservice - pour les paiements au lieu de l'ajouter au Store Manager. Ça nous donne plus de flexibilité de déploiement et d'évolution. Pour en savoir plus, veuillez lire la documentation architecturale dans le répertoire `/docs/arc42/architecture.pdf`.
 
