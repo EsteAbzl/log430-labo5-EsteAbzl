@@ -41,9 +41,12 @@ jobs:
       - name: Launch docker
         run: docker compose up -d 
 
+      - name: wait for the database to be up
+        run: docker compose exec -T db mysql -h 127.0.0.1 -u labo05 -plabo05 -e "SELECT 1" --connect-timeout=10
+
       - name: Run tests
         working-directory: src 
-        run: pytest
+        run: pytest -v --tb=short
 
       - name: Clear docker 
         run: docker compose down -v
