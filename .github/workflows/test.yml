@@ -42,7 +42,7 @@ jobs:
         run: docker compose up -d 
 
       - name: wait for the database to be up
-        run: docker compose exec -T mysql -h 127.0.0.1 -u labo05 -plabo05 -e "SELECT 1" --connect-timeout=10
+        run: docker compose exec -T mysql mysql -h 127.0.0.1 -u labo05 -plabo05 -e "SELECT 1" --connect-timeout=10
 
       - name: Run tests
         working-directory: src 
