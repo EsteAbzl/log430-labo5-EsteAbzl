@@ -56,6 +56,7 @@ Dans `orders/commands/write_order.py`, la fonction `add_order` effectue la créa
       json=payment_transaction,
       headers={'Content-Type': 'application/json'}
   )
+
 ```
 
 > ⚠️ ATTENTION : Pour connaître l'URL du service de paiement, veuillez regarder dans `config/krakend.json`. Nous n'allons pas appeler le service directement, nous appellerons KrakenD et il s'occupera d'acheminer notre requête vers le bon chemin. Même si les endpoints du service de paiement ou les hostnames changent, si nous maintenons KrakenD à jour, aucune modification n'est nécessaire dans l'application Store Manager.
