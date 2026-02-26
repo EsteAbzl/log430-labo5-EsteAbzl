@@ -44,7 +44,7 @@ jobs:
       - name: wait for the database to be up
         run: |
           for i in {1..30}; do
-            docker compose exec -T db mysql -h 127.0.0.1 -u labo05 -plabo05 -e "SELECT 1" --connect-timeout=10 && break
+            docker compose exec -T mysql mysql -h 127.0.0.1 -u labo05 -plabo05 -e "SELECT 1" --connect-timeout=10 && break
             echo "Waiting for MySQL... ($i/30)"
             sleep 2
           done
