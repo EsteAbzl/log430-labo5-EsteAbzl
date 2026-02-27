@@ -80,7 +80,7 @@ def test_stock_flow(client):
             }
         ]
     }
-    response = client.post('`http://api-gateway:8080/store-manager-api/orders',
+    response = client.post('http://api-gateway:8080/store-manager-api/orders',
                           data=json.dumps(order_data),
                           content_type='application/json')
     
