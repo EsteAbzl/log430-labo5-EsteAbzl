@@ -22,7 +22,7 @@ def create_order(request):
         return jsonify({'order_id': order_id}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-    
+
 def update_order(request):
     """Update order, use WriteOrder model"""
     payload = request.get_json() or {}
@@ -33,7 +33,7 @@ def update_order(request):
     try:
         # update MySQL
         status = modify_order(order_id, is_paid=is_paid)
-        
+
         # update Redis
         r = get_redis_conn()
         order = r.hgetall(f"order:{order_id}")
