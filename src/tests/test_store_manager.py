@@ -39,7 +39,7 @@ def test_stock_flow(client):
     product_id = response.get_json()['product_id']
     assert product_id > 0
     logger.debug(f"Created product with ID: {product_id}")
-    
+
     # 2. Add 5 units to stock (POST /stocks)
     stock_data = {
         'product_id': product_id,
@@ -80,7 +80,7 @@ def test_stock_flow(client):
             }
         ]
     }
-    response = client.post('/orders',
+    response = client.post('`http://api-gateway:8080/store-manager-api/orders',
                           data=json.dumps(order_data),
                           content_type='application/json')
     
